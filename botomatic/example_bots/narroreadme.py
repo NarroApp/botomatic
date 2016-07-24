@@ -23,8 +23,9 @@ class NarroReadMe(TBot):
                 continue 
 
             if tweet.entities["urls"]:
-                url = tweet.entities["urls"][0]["expanded_url"]
-                if ("fb.me" not in url) & ("twitter.com" not in url):
+                expanded_url = tweet.entities["urls"][0]["expanded_url"]
+                url = tweet.entities["urls"][0]["url"]
+                if ("fb.me" not in expanded_url) & ("twitter.com" not in expanded_url):
                     self.reply_with_readme(tweet.id, url, tweet.user.screen_name)
                     count += 1
                 else:
