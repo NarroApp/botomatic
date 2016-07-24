@@ -39,7 +39,7 @@ class NarroReadMe(TBot):
         narro_url = "https://www.narro.co/add?url=" + url
         reply = "@%s You can listen to that article on @narroapp here: %s" % (name, narro_url)
         print reply
-        self.tweets.append(id, reply)
+        self.tweets.append((reply, id))
 
 if __name__ == '__main__':
     r = NarroReadMe()
